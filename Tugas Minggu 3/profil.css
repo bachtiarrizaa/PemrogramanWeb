@@ -1,0 +1,114 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+.main{
+   width: 100%;
+   background: url('bg.png');
+   background-position: center;
+   background-size: cover;
+   height: 100vh;
+   position: relative;
+   font-family: sans-serif;
+}
+.navbar{
+   width: 86%;
+   display: flex;
+   margin: auto;
+   padding: 15px 0;
+   align-items: center;
+   justify-content: space-between;
+}
+.navbar .logo{
+   width: 150px;
+   cursor: pointer;
+   margin-top: 0;
+   margin-left: -2%;
+}
+
+ul{
+   margin-top: -4%;
+}
+ul li{
+   list-style: none;
+   display: inline-block;
+   padding: 10px 16px;
+}
+ul li a{
+   font-size: 16px;
+   font-weight: bold;
+   text-decoration: none;
+   color: aliceblue;
+   margin-top: 0;
+}
+ul li a:hover{
+   color: darkslateblue;
+}
+.info{
+   margin-left: 8%;
+   margin-top: 6%;
+}
+.info h1{
+   font-size: 50px;
+   color: aliceblue;
+}
+.info h2{
+   font-size: 30px;
+   color: aliceblue;
+}
+.info h3{
+   font-size: 20px;
+   color: darkslateblue;
+}
+.info span{
+   color: darkslateblue;
+}
+.info a{
+   background: darkslateblue;
+   padding: 10px 18px;
+   text-decoration: none;
+   font-weight: bold;
+   color: antiquewhite;
+   display: inline-block;
+   margin: 30px 0;
+   border-radius: 5px;
+   transition: .4s ease;
+}
+.info a:hover{
+   cursor: pointer;
+   background-color: darkslateblue;
+   color: aliceblue;
+   box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+   font-weight: bold;
+}
+.image {
+   width: 30%;
+   height: 89%;
+   position: absolute;
+   right: 100px;
+   bottom: 0;
+}
+.image img{
+   height: 100;
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   transform: translate(-55%);
+   transition: bottom 2s,left 2s;
+}
+.image:hover .profil{
+   left: 55%;
+}
+.icon a{
+   text-decoration: none;
+   color: aliceblue;
+}
+.icon ion-icon{
+   margin-left: 7%;
+   margin-right: -60px;
+   color: aliceblue;
+   font-size: 40px;
+}
+.icon ion-icon:hover{
+   color: darkslateblue;
+}
