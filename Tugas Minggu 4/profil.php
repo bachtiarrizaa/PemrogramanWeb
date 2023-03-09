@@ -17,11 +17,11 @@
 </head>
 <body>
     <?php
-    $tglLahir = new DateTime('2002-07-21');
-    $tglSekarang = new DateTime('today');
-    $umur = $tglSekarang->diff($tglLahir)->y;
-    $nama = 'Bachtiar Riza Pratama';
-    $pendidikan = array('SDN Jedongcangkring','SDN Cemengkalang','SMPN 2 Sidoarjo','SMAN 1 Krembung','Universitas Pembangunan Nasional "Veteran" Jawa Timur');
+    $date = new DateTime('2002-07-21');
+    $datenow = new DateTime('today');
+    $age = $datenow->diff($date)->y;
+    $name = 'Bachtiar Riza Pratama';
+    $education = array('SDN Jedongcangkring','SDN Cemengkalang','SMPN 2 Sidoarjo','SMAN 1 Krembung','Universitas Pembangunan Nasional "Veteran" Jawa Timur');
     ?>
     <!--Navbar start-->
     <nav class="navbar">
@@ -42,7 +42,7 @@
     <section class="hero" id="hero">
     <main class="content">
         <h1>Hello, <span>It's Me</span></h1>
-        <h2>Bachtiar Riza Pratama</h2>
+        <h2><?php echo $name?></h2>
         <p>I'am a majoring informatics <br> UPN "Veteran" Jawa Timur</p>
         <a href="#" >My Social Media</a>
         <div class="image">
@@ -69,7 +69,7 @@
                     <tr>
                         <td><b>Full Name</b></td>
                         <td>:</td>
-                        <td>Bachtiar Riza Pratama</td>
+                        <td><?php echo $name?></td>
                     </tr>
                     <tr>
                         <td><b>Nick Name</b></td>
@@ -79,12 +79,12 @@
                     <tr>
                         <td><b>Place and Date of Birth</b></td>
                         <td>:</td>
-                        <td>Surabaya, 21 Juli 2002</td>
+                        <td>Surabaya, 21 July 2002</td>
                     </tr>
                     <tr>
                         <td><b>Age</b></td>
                         <td>:</td>
-                        <td>20</td>
+                        <td><?php echo $age?></td>
                     </tr>
                     <tr>
                         <td><b>Gender</b></td>
@@ -139,23 +139,23 @@
     <section id="education" class="education">
         <h2><span>Education</span> Journey</h2>
         <div class="education-data">
-                <div class="level"><?php echo $pendidikan[0]?></div>
+                <div class="level"><?php echo $education[0]?></div>
                 <div class="year">2009 - 2014</div>
             </div>
             <div class="education-data">
-                <div class="level"><?php echo $pendidikan[1]?></div>
+                <div class="level"><?php echo $education[1]?></div>
                 <div class="year">2014 - 2015</div>
             </div>
             <div class="education-data">
-                <div class="level"><?php echo $pendidikan[2]?></div>
+                <div class="level"><?php echo $education[2]?></div>
                 <div class="year">2015 - 2018</div>
             </div>
             <div class="education-data">
-                <div class="level"><?php echo $pendidikan[3]?></div>
+                <div class="level"><?php echo $education[3]?></div>
                 <div class="year">2018 - 2021</div>
             </div>
             <div class="education-data">
-                <div class="level"><?php echo $pendidikan[4]?></div>
+                <div class="level"><?php echo $education[4]?></div>
                 <div class="year">2021 - now</div>
             </div>
     </section>
