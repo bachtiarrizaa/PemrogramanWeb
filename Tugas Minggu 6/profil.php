@@ -140,26 +140,12 @@
     <!--Hobby end-->
     <section id="education" class="education">
         <h2><span>Education</span> Journey</h2>
-        <div class="education-data">
-                <div class="level"><?php echo $education[0]?></div>
-                <div class="year"><?php echo $year[0]?></div>
-            </div>
+        <?php foreach ($education as $tahun => $pendidikan): ?>
             <div class="education-data">
-                <div class="level"><?php echo $education[1]?></div>
-                <div class="year"><?php echo $year[1]?></div>
+                <div class="level"><?php echo $pendidikan ?></div>
+                <div class="year"><?php echo $year[$tahun] ?></div>
             </div>
-            <div class="education-data">
-                <div class="level"><?php echo $education[2]?></div>
-                <div class="year"><?php echo $year[2]?></div>
-            </div>
-            <div class="education-data">
-                <div class="level"><?php echo $education[3]?></div>
-                <div class="year"><?php echo $year[3]?></div>
-            </div>
-            <div class="education-data">
-                <div class="level"><?php echo $education[4]?></div>
-                <div class="year"><?php echo $year[4]?></div>
-            </div>
+        <?php endforeach; ?>
     </section>
     <!--Education end-->
     <!--Contaxt start-->
