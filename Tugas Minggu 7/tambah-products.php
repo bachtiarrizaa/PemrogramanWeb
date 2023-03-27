@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
     $buyPrice = $_POST['buyPrice'];
     $MSRP = $_POST['MSRP'];
     
-    //query untuk menambahkan data products
     $query = "INSERT INTO products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP) VALUES ('$productCode', '$productName', '$productLine', '$productScale', '$productVendor', '$productDescription', '$quantityInStock', '$buyPrice', '$MSRP')";
     $result = mysqli_query($conn, $query);
 
