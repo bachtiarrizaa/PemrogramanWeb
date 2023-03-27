@@ -47,12 +47,6 @@ $result = mysqli_query($conn,$query);
         .table td, .table th {
             vertical-align: middle;
         }
-        .fa-pen-to-square, .fa-trash {
-            cursor: pointer;
-        }
-        .fa-pen-to-square:hover, .fa-trash:hover {
-            color: #dc3545;
-        }
     </style>
     <title>Tambah Product</title>
     
