@@ -16,14 +16,16 @@ if(isset($_POST['submit'])){
     $salesRepEmployeeNumber = $_POST['salesRepEmployeeNumber'];
     $creditLimit = $_POST['creditLimit'];
 
-    $query = "INSERT INTO customers (customerNumber, customerName, contactLastName, ,contactFirstName, phone, addressLine1, addressLine2, city, state, postalCode, country, salesRepEmployeeNumber, creditLimit) VALUES 
-    ('$customerNumber', '$customerName', '$contactLastName', '$contactFirstName', '$phone', '$addressLine1', '$addressLine2', '$city','$state' ,'$postalCode', '$country', '$salesRepEmployeeNumber', '$creditLimit')";
+    $query = "INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, addressLine2, city, state, postalCode, country, salesRepEmployeeNumber, creditLimit) 
+    VALUES ('$customerNumber', '$customerName', '$contactLastName', '$contactFirstName', '$phone', '$addressLine1', '$addressLine2', '$city', '$state', '$postalCode', '$country', '$salesRepEmployeeNumber', '$creditLimit')";
     $result = mysqli_query($conn, $query);
 
     if($result){
-        header("Location: index.php?msg=New record created successfully");
+        header("Location: customers.php?msg=New record created successfully");
     }
 }
+$query = "SELECT * FROM employees";
+$employees = mysqli_query($conn, $query);
 ?>
 
 <!doctype html>
@@ -63,7 +65,7 @@ if(isset($_POST['submit'])){
     </nav>
     <div class="container">
         <div class="text-center mb-3 justify-content-center">
-            <h3>Add New Product</h3>
+            <h3>Add New Customers</h3>
             <p class="text-muted">Compelete the form below add new customers</p>
         </div>
         <div class="container d-flex justify-content-center">
@@ -120,7 +122,12 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Sales Rep Employee Number</label>
-                    <input type="text" class="form-control" name="salesRepEmployeeNumber" placeholder="Sales Rep Employee Number">
+                    <select class="form-control" id="salesRepEmployeeNumber" name="salesRepEmployeeNumber">
+                        <?php while ($data = mysqli_fetch_array($employees)) : ?>
+                            <option value="<?php echo $data['employeeNumber']; ?>"><?php echo $data['employeeNumber']; ?>
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Credit Limit</label>

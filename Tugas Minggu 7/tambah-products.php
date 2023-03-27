@@ -12,16 +12,17 @@ if(isset($_POST['submit'])){
     $buyPrice = $_POST['buyPrice'];
     $MSRP = $_POST['MSRP'];
     
+
     $query = "INSERT INTO products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP) VALUES ('$productCode', '$productName', '$productLine', '$productScale', '$productVendor', '$productDescription', '$quantityInStock', '$buyPrice', '$MSRP')";
     $result = mysqli_query($conn, $query);
 
     if($result){
-        header("Location: index.php?msg=New record created successfully");
+        header("Location: products.php?msg=New record created successfully");
         exit();
     }
 }
 $query = "SELECT * FROM productlines";
-$result = mysqli_query($conn,$query);
+$productLines = mysqli_query($conn,$query);
 
 ?>
 
@@ -62,7 +63,7 @@ $result = mysqli_query($conn,$query);
     </nav>
     <div class="container">
         <div class="text-center mb-3 justify-content-center">
-            <h3>Add New Product</h3>
+            <h3>Add New Products</h3>
             <p class="text-muted">Compelete the form below add new products</p>
         </div>
         <div class="container d-flex justify-content-center">
@@ -80,7 +81,12 @@ $result = mysqli_query($conn,$query);
                 <div class="row mb-3">
                     <div class="col">
                         <label class="form-label">Product Line</label>
-                        <input type="text" class="form-control" name="productLine" placeholder="Product Line">
+                        <select class="form-control" id="productLine" name="productLine">
+                            <?php while ($data = mysqli_fetch_array($productLines)) : ?>
+                                <option value="<?php echo $data['productLine']; ?>"><?php echo $data['productLine']; ?>
+                            </option>
+                            <?php endwhile; ?>
+                        </select>   
                     </div>
                     <div class="col">
                         <label class="form-label">Product Scale</label>

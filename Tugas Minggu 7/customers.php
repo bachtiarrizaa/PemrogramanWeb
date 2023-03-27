@@ -46,25 +46,25 @@ include 'conn.php';
         <?php endif; ?>
         <div class="d-flex justify-content-between align-items-center ">
             <h3 class="mb-0">Customers</h3>
-            <a href="tambah-customers.php" class="btn btn-primary"><i class="fas fa-plus"></i> Add New</a>
+            <a href="tambah-customers.php" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Customers</a>
         </div>
         <hr>
-        <table class="table table-hover" style="white-space: nowrap;">
+        <table class="table table-hover">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">customer Number</th>
-                <th scope="col">customer Name</th>
-                <th scope="col">contact Last Name</th>
-                <th scope="col">contact First Name</th>
-                <th scope="col">phone</th>
-                <th scope="col">address Line 1</th>
-                <th scope="col">address Line 2</th>
-                <th scope="col">city</th>
-                <th scope="col">state</th>
-                <th scope="col">postal Code</th>
-                <th scope="col">country</th>
-                <th scope="col">sales Rep Employee Number</th>
-                <th scope="col">credit Limit</th>
+                <th scope="col">Customer Number</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Contact Last Name</th>
+                <th scope="col">Contact First Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address Line 1</th>
+                <th scope="col">Address Line 2</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Postal Code</th>
+                <th scope="col">Country</th>
+                <th scope="col">Sales Rep Employee Number</th>
+                <th scope="col">Credit Limit</th>
             </thead>
             <tbody>
                 <?php
@@ -75,10 +75,10 @@ include 'conn.php';
                 while($row = mysqli_fetch_assoc($result)){
                     ?>
                     <tr>
-                        <th><?php echo $row['customerNumber']?></th>
-                        <th><?php echo $row['customerName']?></th>
-                        <th><?php echo $row['contactLastName']?></th>
-                        <th><?php echo $row['contactFirstName']?></th>
+                        <th style="font-weight: normal;"><?php echo $row['customerNumber']?></th>
+                        <th style="font-weight: normal;"><?php echo $row['customerName']?></th>
+                        <th style="font-weight: normal;"><?php echo $row['contactLastName']?></th>
+                        <th style="font-weight: normal;"><?php echo $row['contactFirstName']?></th>
                         <td><?php echo $row['phone']; ?></td>
                         <td><?php echo $row['addressLine1']; ?></td>
                         <td><?php echo $row['addressLine2']; ?></td>
